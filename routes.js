@@ -1,4 +1,4 @@
-angular.module("myapp",["ngRoute","ctrls","sevices"])
+angular.module("myapp",["ngRoute","ngAnimate","ctrls","sevices"])
     .config(function($routeProvider){
         $routeProvider.when("/",{
             templateUrl:"indexcon.html",
