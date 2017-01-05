@@ -1,0 +1,9 @@
+
+<ul>
+    <li ng-repeat="iteam in data">
+        <span ng-click="change($index)">{{iteam.name}}</span>
+        <ul ng-show="$index==a">
+            <li ng-repeat="iteam1 in iteam.son">{{iteam1.name}}</li>
+        </ul>
+    </li>
+</ul>

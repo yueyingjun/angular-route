@@ -2,13 +2,13 @@
     <div class="mui-slider-group mui-slider-loop">
         <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
         <div class="mui-slider-item mui-slider-item-duplicate">
-            <a href="#!/list/0">
+            <a href="#">
                 <img src="http://placehold.it/400x300">
             </a>
         </div>
         <!-- 第一张 -->
         <div class="mui-slider-item">
-            <a href="#!/list/1">
+            <a href="#">
                 <img src="http://placehold.it/400x300">
             </a>
         </div>
@@ -44,11 +44,15 @@
         <div class="mui-indicator"></div>
     </div>
 </div>
-
 <ul class="mui-table-view">
-    <li class="mui-table-view-cell" ng-repeat="item in data">
-        <a class="mui-navigate-right">
-            {{item.title}}
+    <li class="mui-table-view-cell mui-media" ng-repeat="item in data">
+        <a href="#!/list/0">
+            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+            <div class="mui-media-body">
+                {{item.title}}
+                <p class="mui-ellipsis">{{item.con}}</p>
+            </div>
         </a>
     </li>
+
 </ul>
