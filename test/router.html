@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!--
-    1. bower  引入到页面当中
-    2. 将route提供的模块依赖到我们主模块当中 ngRoute
-    3. 配置路由  在主文件当中配置路由
-    4. config     $routeProvider服务
-    5. $routeProvider.when("路径",{templateUrl:url,controller:"name"})
-    6.  应该在主页面当中指定 容器  ng-view
-    -->
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -17,50 +9,36 @@
     <script src="../public/javascripts/angular-animate/angular-animate.min.js"></script>
     <script src="controllers.js"></script>
     <script src="sevices.js"></script>
-    <link rel="stylesheet" href="../public/stylesheets/mui.min.css">
     <script src="app.js"></script>
+    <link rel="stylesheet" href="../public/stylesheets/mui.min.css">
     <style>
-
-        /*
-           1. view-animate
-           2. ng-enter 100%
-           3. ng-enter-active 0%
-
-
-           ngview 复制出来一份
-
-           已有的要离开
-           leave
-
-           ng-leave 0
-           ng-leave-active -100%
-
-           复制出来的ng-view 包含有最新的内容
-
-           ng-enter  100%
-           ng-enter-active 0
-
-        */
-
-
-
         .view-animate {
-            transition:opacity ease 1s;
+            padding:10px 10px 50px;
         }
-        .view-animate.ng-enter, .view-animate.ng-leave {
-            width:100%;
-            position:absolute;
-            opacity:0;
 
+        .view-animate.ng-enter, .view-animate.ng-leave {
+            transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+
+            display:block;
+            width:100%;
+            border-left:1px solid black;
+
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            padding:10px;
         }
+
         .view-animate.ng-enter {
-            opacity: 0;
+            left:100%;
         }
         .view-animate.ng-enter.ng-enter-active {
-            opacity: 1;
+            left:0;
         }
         .view-animate.ng-leave.ng-leave-active {
-            opacity:0;
+            left:-100%;
         }
 
     </style>
