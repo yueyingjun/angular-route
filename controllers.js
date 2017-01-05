@@ -1,7 +1,12 @@
 angular.module("ctrls",["sevices"])
-.controller("index",["$scope","$http","indexDate",function($scope,$http,indexDate){
-    indexDate.then(function(data){
-       // console.log(data);
-        $scope.data=data.data
-    });
-}])
+    .controller("index",["$scope","$http","indexDate",function($scope,$http,indexDate){
+        indexDate.then(function(data){
+            $scope.data=data.data
+        });
+    }])
+    .controller("list",["$scope",function($scope){
+        $scope.data=[{title:"list",con:"con"}]
+    }])
+    .controller("show",["$scope",function($scope){
+        $scope.data="show";
+    }])
