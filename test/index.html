@@ -1,14 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">标题</h1>
+</header>
 <div id="slider" class="mui-slider" >
     <div class="mui-slider-group mui-slider-loop">
         <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
         <div class="mui-slider-item mui-slider-item-duplicate">
-            <a href="#!/list/0">
+            <a href="#">
                 <img src="http://placehold.it/400x300">
             </a>
         </div>
         <!-- 第一张 -->
         <div class="mui-slider-item">
-            <a href="#!/list/1">
+            <a href="#">
                 <img src="http://placehold.it/400x300">
             </a>
         </div>
@@ -44,11 +55,30 @@
         <div class="mui-indicator"></div>
     </div>
 </div>
-
 <ul class="mui-table-view">
     <li class="mui-table-view-cell" ng-repeat="item in data">
-        <a class="mui-navigate-right">
-            {{item.title}}
+        <a class="mui-navigate-right" href="#!/list/{{$index}}">
+           {{item.type}}
         </a>
     </li>
 </ul>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item mui-active">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-phone"></span>
+        <span class="mui-tab-label">电话</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-email"></span>
+        <span class="mui-tab-label">邮件</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-gear"></span>
+        <span class="mui-tab-label">设置</span>
+    </a>
+</nav>
+</body>
+</html>
