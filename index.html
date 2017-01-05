@@ -1,54 +1,59 @@
-<div id="slider" class="mui-slider" >
-    <div class="mui-slider-group mui-slider-loop">
-        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-        <div class="mui-slider-item mui-slider-item-duplicate">
-            <a href="#!/list/0">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第一张 -->
-        <div class="mui-slider-item">
-            <a href="#!/list/1">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第二张 -->
-        <div class="mui-slider-item">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第三张 -->
-        <div class="mui-slider-item">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第四张 -->
-        <div class="mui-slider-item">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-        <div class="mui-slider-item mui-slider-item-duplicate">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-    </div>
-    <div class="mui-slider-indicator">
-        <div class="mui-indicator mui-active"></div>
-        <div class="mui-indicator"></div>
-        <div class="mui-indicator"></div>
-        <div class="mui-indicator"></div>
-    </div>
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/stylesheets/mui.min.css">
+    <script src="public/javascripts/angular.min.js"></script>
+    <script src="public/javascripts/angular-route.min.js"></script>
+    <script src="public/javascripts/angular-animate.min.js"></script>
+    <script src="test/route.js"></script>
+    <script src="test/controller.js"></script>
+    <script src="test/services.js"></script>
+    <title>Document</title>
+    <style>
+        .view-animate-container {
+            position:relative;
+            height:100px!important;
+            background:white;
+            border:1px solid black;
+            height:40px;
+            overflow:hidden;
+        }
+        .view-animate {
+            padding:10px;
+        }
+        .view-animate.ng-enter, .view-animate.ng-leave {
+            transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
 
-<ul class="mui-table-view">
-    <li class="mui-table-view-cell" ng-repeat="item in data">
-        <a class="mui-navigate-right">
-            {{item.title}}
-        </a>
-    </li>
-</ul>
+            display:block;
+            width:100%;
+            border-left:1px solid black;
+
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            padding:10px;
+        }
+
+        .view-animate.ng-enter {
+            left:100%;
+        }
+        .view-animate.ng-enter.ng-enter-active {
+            left:0;
+        }
+        .view-animate.ng-leave.ng-leave-active {
+            left:-100%;
+        }
+    </style>
+</head>
+<body ng-app="myapp">
+<div ng-view="" class="view-animate">
+
+</div>
+</body>
+</html>

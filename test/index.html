@@ -1,0 +1,41 @@
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">标题</h1>
+</header>
+<div class="mui-slider" style="margin-top: 44px;">
+    <div class="mui-slider-group" style="background:red; height:100px;">
+        <!--第一个内容区容器-->
+        <div class="mui-slider-item" style="background:green; height:100px;">
+            <!-- 具体内容 -->
+        </div>
+        <!--第二个内容区-->
+        <div class="mui-slider-item" style="background:yellow; height:100px;">
+            <!-- 具体内容 -->
+        </div>
+    </div>
+</div>
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell" ng-repeat="item in data">
+        <a class="mui-navigate-right" href="#!/list/id">
+            {{item.name}}
+        </a>
+    </li>
+
+</ul>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item mui-active">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-phone"></span>
+        <span class="mui-tab-label">通讯录</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon  mui-icon-compose"></span>
+        <span class="mui-tab-label">备忘录</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-chat"></span>
+        <span class="mui-tab-label">聊天</span>
+    </a>
+</nav>
