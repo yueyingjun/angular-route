@@ -1,0 +1,21 @@
+.mui-input-row{
+    margin-top: 44px;
+}
+.show-all{
+    text-align: center;
+    cursor: pointer
+}
+.en{
+    position: fixed;
+    right:15px;
+    width:20px;
+    z-index:999;
+    top:93px;
+    text-align: center;
+}
+.suoyin{
+    background: #ccc;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}

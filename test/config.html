@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../public/javascripts/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="ctrl"></div>
+</body>
+<script>
+    angular.module("myapp",[]).factory("ABC",function(){
+        return {name:"Hangsna"};
+        //自定义服务
+    }).controller("ctrl",function(ABC){
+        console.log(ABC.name);
+    })
+</script>
+</html>

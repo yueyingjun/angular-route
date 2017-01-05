@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell mui-media" ng-repeat="item in data">
+        <a href="#!/show/0">
+            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+            <div class="mui-media-body">
+                {{item.title}}
+                <p class="mui-ellipsis">{{item.con}}</p>
+            </div>
+        </a>
+    </li>
+</ul>
+</body>
+</html>

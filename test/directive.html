@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../public/javascripts/angular/angular.min.js"></script>
+    <script src="directive.js"></script>
+</head>
+<body ng-app="myapp">
+<!--组件 react用来组件-->
+<div ng-controller="ctrl">
+    <div menu></div>
+    <menu></menu>
+</div>
+<menu></menu>
+</body>
+<script>
+    angular.module("myapp",["directives"])
+</script>
+<script>
+    angular.module("myapp",[])
+            .directive("menu",function(){
+                return{
+                    restrict:"ECMA", //定义出现方式 e标签元素 c类名 m注释 a属性
+                    templateUrl:"demon.html",//内部采用ajax技术,指定地址用来替换
+                    template:"<div>{{abc}}</div>",//模板,替换原来内容  {{abc}}是所在的控制器上的值,即依赖    那么如何不依赖控制器在自定义的指令上定义一个数据$scope,即自定义指令独立  function(a,b,c)不依赖注入，a就是$scope
+                    link:function(a,b,c){
+                        a.abc="指令的$scope"
+                    },
+                    replace:true ,//它会把原有的内容全都彻底替换掉【要替换的内容必须只有一个根标签，否则报错】
+                    transclude:true //保留原来的内容
+                }
+            }).controller("ctrl",function($scope){
+$scope.abc="控制器上的数据"
+})
+</script>
+</html>

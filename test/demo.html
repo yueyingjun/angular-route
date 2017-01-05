@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:100px;height:100px;border:1px solid red"></div>
+    <button type="button">按钮</button>
+</body>
+<script>
+//    window.onpopstate=function() {
+        var url = location.href;
+        if (url.indexOf("#") > -1) {
+            var ajaxurl = url.slice(url.indexOf("#") + 1);
+            var xmlobj = new XMLHttpRequest();
+            console.log(xmlobj);
+            xmlobj.onload = function () {
+                document.querySelector("div").innerHTML = xmlobj;
+            }
+            xmlobj.open("get", ajaxurl);
+            xmlobj.send();
+        } else {
+            document.querySelector("div").innerHTML = "";
+        }
+
+        document.querySelector("button").onclick = function () {
+            var newurl = url + "#demo1.html";
+            location.href = newurl;
+            var xmlobj = new XMLHttpRequest();
+            xmlobj.onload = function () {
+                document.querySelector("div").innerHTML = xmlobj;
+            }
+            xmlobj.open("get", "demo.html");
+            xmlobj.send();
+        }
+//    }
+</script>
+</html>

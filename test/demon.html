@@ -1,0 +1,9 @@
+<!--<div>new</div>-->
+<ul style="border-bottom:1px solid #ccc">
+    <li ng-repeat="item in data">
+        <span ng-click="change($index)">{{item.name}}</span>
+        <ul ng-show="$index==a">
+            <li ng-repeat="item1 in item.son">{{item1.name}}</li>
+        </ul>
+    </li>
+</ul>
