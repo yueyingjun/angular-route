@@ -1,1 +1,1 @@
-https://github.com/Abel-Fan/myangular-router
+https://abel-fan.github.io/myangular-router/router.html#!
