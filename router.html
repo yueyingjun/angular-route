@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--
+    1. bower  引入到页面当中
+    2. 将route提供的模块依赖到我们主模块当中 ngRoute
+    3. 配置路由  在主文件当中配置路由
+    4. config     $routeProvider服务
+    5. $routeProvider.when("路径",{templateUrl:url,controller:"name"})
+    6.  应该在主页面当中指定 容器  ng-view
+    -->
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="../public/javascripts/angular/angular.min.js"></script>
+    <script src="../public/javascripts/angular-route/angular-route.min.js"></script>
+    <script src="../public/javascripts/angular-animate/angular-animate.min.js"></script>
+    <script src="controllers.js"></script>
+    <script src="sevices.js"></script>
+    <link rel="stylesheet" href="../public/stylesheets/mui.min.css">
+    <script src="app.js"></script>
+    <style>
+
+        /*
+           1. view-animate
+           2. ng-enter 100%
+           3. ng-enter-active 0%
+
+
+           ngview 复制出来一份
+
+           已有的要离开
+           leave
+
+           ng-leave 0
+           ng-leave-active -100%
+
+           复制出来的ng-view 包含有最新的内容
+
+           ng-enter  100%
+           ng-enter-active 0
+
+        */
+
+
+
+        .view-animate {
+            transition:opacity ease 1s;
+        }
+        .view-animate.ng-enter, .view-animate.ng-leave {
+            width:100%;
+            position:absolute;
+            opacity:0;
+
+        }
+        .view-animate.ng-enter {
+            opacity: 0;
+        }
+        .view-animate.ng-enter.ng-enter-active {
+            opacity: 1;
+        }
+        .view-animate.ng-leave.ng-leave-active {
+            opacity:0;
+        }
+
+    </style>
+</head>
+<body ng-app="myapp">
+
+<div ng-view class="view-animate">
+
+</div>
+
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item mui-active">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-phone"></span>
+        <span class="mui-tab-label">电话</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-email"></span>
+        <span class="mui-tab-label">邮件</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-gear"></span>
+        <span class="mui-tab-label">设置</span>
+    </a>
+</nav>
+</body>
+</html>
