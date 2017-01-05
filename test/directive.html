@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+    <script src="../public/javascripts/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="ctrl">
+    <div menu>12312</div>
+</div>
+</body>
+<!--restrict:"ECMA", E元素 C类名 M注释 A属性-->
+<script>
+    //ajax 1.向服务器发起请求 2.不能跨域
+    angular.module("myapp",[])
+            .directive("menu",function(){
+                return {
+                    restrict:"A",
+                    //template:"<div>div</div>"
+                    templateUrl:"demo.html",
+                    //replace:true
+                    transclude:true,
+                    scope:{
+
+                    },
+                    link:function($scope,b,c){
+                        //a.abc="指令的scope";
+                        $scope.data=[
+                            {
+                                name:"111",
+                                son:[
+                                    {name:"1-1"},
+                                    {name:"1-1"},
+                                    {name:"1-1"},
+                                ]
+                            },
+                            {
+                                name:"222",
+                                son:[
+                                    {name:"1-1"},
+                                    {name:"1-1"},
+                                    {name:"1-1"},
+                                ]
+                            }
+                        ]
+                        $scope.a=0;
+                        $scope.change=function(id){
+                            $scope.a=id;
+                        }
+                    }
+                }
+            }).controller("ctrl",function($scope){
+                $scope.abc="控制器的值"
+    })
+</script>
+</html>
