@@ -1,54 +1,52 @@
-<div id="slider" class="mui-slider" >
-    <div class="mui-slider-group mui-slider-loop">
-        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-        <div class="mui-slider-item mui-slider-item-duplicate">
-            <a href="#!/list/0">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第一张 -->
-        <div class="mui-slider-item">
-            <a href="#!/list/1">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第二张 -->
-        <div class="mui-slider-item">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第三张 -->
-        <div class="mui-slider-item">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 第四张 -->
-        <div class="mui-slider-item">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
-        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-        <div class="mui-slider-item mui-slider-item-duplicate">
-            <a href="#">
-                <img src="http://placehold.it/400x300">
-            </a>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <script src="public/javascripts/angular/angular.min.js"></script>
+    <script src="public/javascripts/angular-route/angular-route.js"></script>
+    <script src="public/javascripts/angular-animate/angular-animate.min.js"></script>
+    <script src="mui.min.js"></script>
+    <script src="sevices.js"></script>
+    <script src="controllers.js"></script>
+    <script src="routes.js"></script>
+    <link rel="stylesheet" href="public/stylesheets/phone.css">
+    <link rel="stylesheet" href="public/stylesheets/mui.min.css">
+</head>
+<body ng-app="myapp">
+<header>
+    <div class="header">
+        <span>办公APP</span>
     </div>
-    <div class="mui-slider-indicator">
-        <div class="mui-indicator mui-active"></div>
-        <div class="mui-indicator"></div>
-        <div class="mui-indicator"></div>
-        <div class="mui-indicator"></div>
-    </div>
-</div>
+</header>
+<div ng-view class="view-animate"></div>
 
-<ul class="mui-table-view">
-    <li class="mui-table-view-cell" ng-repeat="item in data">
-        <a class="mui-navigate-right">
-            {{item.title}}
-        </a>
-    </li>
-</ul>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item mui-active">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-phone"></span>
+        <span class="mui-tab-label">电话</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-email"></span>
+        <span class="mui-tab-label">邮件</span>
+    </a>
+    <a class="mui-tab-item">
+        <span class="mui-icon mui-icon-gear"></span>
+        <span class="mui-tab-label">设置</span>
+    </a>
+</nav>
+</body>
+<script>
+    window.onload=function(){
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+    }
+</script>
+</html>
