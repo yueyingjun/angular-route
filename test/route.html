@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../public/javascripts/angular/angular.min.js"></script>
+    <script src="../public/javascripts/angular-route/angular-route.min.js"></script>
+    <script src="../public/javascripts/angular-animate/angular-animate.min.js"></script>
+    <script src="../public/javascripts/mui.min.js"></script>
+    <script src="route.js"></script>
+    <script src="controles.js"></script>
+    <script src="severes.js"></script>
+    <link rel="stylesheet" href="../public/stylesheets/mui.min.css">
+</head>
+<style>
+
+
+    .view-animate-container {
+        position:relative;
+        height:100px!important;
+        background:white;
+        border:1px solid black;
+        height:40px;
+        overflow:hidden;
+    }
+
+    .view-animate {
+        padding:10px;
+    }
+
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        transition:opacity ease 1s;
+
+        display:block;
+        width:100%;
+        border-left:1px solid black;
+
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        padding:10px;
+        opacity:1;
+    }
+
+    .view-animate.ng-enter {
+        opacity:0;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        opacity:1;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        opacity:0;
+    }
+
+
+</style>
+<body ng-app="myapp">
+<div ng-view class="view-animate">
+
+</div>
+</body>
+</html>
