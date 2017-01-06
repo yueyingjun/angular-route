@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./static/js/angular.min.js"></script>
+    <script src="directives.js"></script>
+    <style>
+
+    </style>
+</head>
+<body ng-app="myapp">
+<!--组件-->
+<div ng-controller="ctrl">
+    <div abc>
+        abbcdef
+    </div>
+
+    <div menu></div>
+    <div menu></div>
+</div>
+
+</body>
+<script>
+    angular.module("myapp",["directives"])
+           .controller("ctrl",function ($scope) {
+                $scope.abc="我是控制器上的值"
+            })
+</script>
+</html>
