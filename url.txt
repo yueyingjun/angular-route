@@ -1,1 +1,1 @@
-https://13835760532.github.io/route/worker/text/route.html
+https://13835760532.github.io/angular-router/worker/test/route.html#!/
