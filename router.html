@@ -1,77 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!--
-    1. bower  引入到页面当中
-    2. 将route提供的模块依赖到我们主模块当中 ngRoute
-    3. 配置路由  在主文件当中配置路由
-    4. config     $routeProvider服务
-    5. $routeProvider.when("路径",{templateUrl:url,controller:"name"})
-    6.  应该在主页面当中指定 容器  ng-view
-    -->
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/router.css">
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular/angular-route.js"></script>
+    <script src="js/angular/angular-animate.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+
     <title>Document</title>
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <script src="../public/javascripts/angular/angular.min.js"></script>
-    <script src="../public/javascripts/angular-route/angular-route.min.js"></script>
-    <script src="../public/javascripts/angular-animate/angular-animate.min.js"></script>
-    <script src="controllers.js"></script>
-    <script src="sevices.js"></script>
-    <link rel="stylesheet" href="../public/stylesheets/mui.min.css">
-    <script src="app.js"></script>
     <style>
-
-        /*
-           1. view-animate
-           2. ng-enter 100%
-           3. ng-enter-active 0%
-
-
-           ngview 复制出来一份
-
-           已有的要离开
-           leave
-
-           ng-leave 0
-           ng-leave-active -100%
-
-           复制出来的ng-view 包含有最新的内容
-
-           ng-enter  100%
-           ng-enter-active 0
-
-        */
-
-
+        .view-animate-container {
+            position:relative;
+            /*height:100px!important;*/
+            background:white;
+            /*border:1px solid black;*/
+            /*height:40px;*/
+            /*overflow:hidden;*/
+        }
 
         .view-animate {
-            transition:opacity ease 1s;
+            /*padding:10px;*/
         }
-        .view-animate.ng-enter, .view-animate.ng-leave {
-            width:100%;
-            position:absolute;
-            opacity:0;
 
+        .view-animate.ng-enter, .view-animate.ng-leave {
+            transition:all ease 0.2s;
+
+            display:block;
+            width:100%;
+            /*border-left:1px solid black;*/
+
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            /*padding:10px;*/
         }
+
         .view-animate.ng-enter {
-            opacity: 0;
+            left:100%;
         }
         .view-animate.ng-enter.ng-enter-active {
-            opacity: 1;
+            left:0;
         }
         .view-animate.ng-leave.ng-leave-active {
-            opacity:0;
+            left:-100%;
         }
-
     </style>
 </head>
-<body ng-app="myapp">
-
-<div ng-view class="view-animate">
-
+<body ng-app="myApp" onload="loaded()">
+<header id="header" class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">标题</h1>
+</header>
+<div id="wrapper" class="view-animate-container">
+    <div id="scroller" ng-view="" class="view-animate">
+    </div>
 </div>
-
-<nav class="mui-bar mui-bar-tab">
+<nav id="footer" class="mui-bar mui-bar-tab">
     <a class="mui-tab-item mui-active">
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
@@ -90,4 +83,14 @@
     </a>
 </nav>
 </body>
+<script type="text/javascript">
+
+    var myScroll;
+
+    function loaded () {
+        myScroll = new IScroll('#wrapper', { mouseWheel: true });
+
+    }
+
+</script>
 </html>

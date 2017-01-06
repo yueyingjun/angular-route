@@ -1,0 +1,15 @@
+angular.module("myApp",["ngRoute","ngAnimate","ctrls","services"])
+        .config(["$routeProvider",function($routeProvider){
+            $routeProvider
+                .when("/",{
+                    templateUrl:"index.html",
+                    controller:"index"
+                })
+                .when("/list/:id",{
+                    templateUrl:"list.html"
+                })
+                .when("/show/:id",{
+                    templateUrl:"show.html"
+                })
+                .otherwise("/");
+        }]);
